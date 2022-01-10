@@ -69,3 +69,10 @@ console.log(cart);
 sayiTopla(sayi)
 console.log(sayi);
 
+
+console.log("User component Yüklendi");
+
+export let userService = new UserService
+userService.list()
+userService.add()
+userService.getById(11)

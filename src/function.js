@@ -1,3 +1,4 @@
+
 export function addToCart(productName, quantity) {
     console.log("Sepete Eklendi : " + productName
     + " Adet : " + quantity);

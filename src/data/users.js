@@ -12,7 +12,7 @@ export const users = [
         firstName: "ahmet",
         lastName: "çetin",
         city: "Isparta",
-        age: 22,
+        age: "21a",
         creditCartNumber: "34325",
         type : "customer"
     },

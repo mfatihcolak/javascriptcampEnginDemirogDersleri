@@ -3,6 +3,7 @@ import './App.css';
 import { BaseLogger, ElasticLogger } from './crossCuttingConcerns/logging/logger';
 import { add, addToCart, addToCart3, addToCart4, icAnadoluSehirleri, numbers2, product1, product2, product3, products } from './function';
 import { addToCart6, cart, quantityOver2, sayi, sayiTopla, total } from './mapFilterReduce';
+import Customer from './models/customer.js';
 import User from './models/user';
 import UserService from './services/userService';
 
@@ -72,7 +73,7 @@ sayiTopla(sayi)
 console.log(sayi);
 
 
-console.log("User component Yüklendi");
+console.log("---------User component Yüklendi---------");
 
 export let logger1 = new ElasticLogger()
 
@@ -81,8 +82,8 @@ export let user1 = new User(1,"Fatih","Çolak","Burdur"); //user.js // user new 
 export let user2 = new User(2,"Baran","Gökçekli","Isparta");
 userService.add(user1)
 userService.add(user2)
-console.log(userService.list());
-console.log(userService.getById(2));
+//console.log(userService.list());
+//console.log(userService.getById(2));
 console.log("------------users------------");
 userService.load();
 console.log("-----------type-----------");
@@ -91,4 +92,9 @@ console.log(userService.employees);
 console.log("------------dataerrors------------");
 console.log(userService.errors);
 console.log("------------validation------------");
-
+console.log("------------add------------");
+//userService.add(new Customer(1,"Seda","Yılmaz","Ankara",24,43433243))
+let customerToAdd = new Customer(1,"Seda","Yılmaz","Ankara",24,43433243)
+customerToAdd.type = "customer"
+console.log("------------sort------------");
+console.log(userService.getCustomersSorted());
